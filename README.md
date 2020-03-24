@@ -1,4 +1,4 @@
-> This project is created to simplify the process of publishing a React component to npm.
+> This project is created to simplify the process of publishing a React component to npm. For a full tutorial on publishing React component to npm, please refer to [this guide](https://medium.com/@cjinghong)
 
 ## Guide
 1. Replace contents in `/src` with your React component.
