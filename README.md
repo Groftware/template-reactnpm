@@ -1,68 +1,26 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> This project is created to simplify the process of publishing a React component to npm.
 
-## Available Scripts
+## Guide
+1. Replace contents in `/src` with your React component.
+1. Edit `webpack.config.js`, replace the following:
+	1. `entry: './src/YOUR_COMPONENT.js'` Replace value of `entry` to path to the entry point of your component.
+	1. Replace 	`output.filename` to the name of your component
+	```
+		output: {
+			path: path.resolve('lib'),
+			filename: 'YOUR_COMPONENT.js',
+			libraryTarget: 'commonjs2',
+  	},
+	```
+1. Edit `package.json`, replace the following:
+	1. `"name": "YOUR_PACKAGE_NAME"` Replace the value of `name` to your package name. This will be the name of the package that is published to `npm` and the name that is used when other people install your package using `npm install YOUR_PACKAGE_NAME`.
+	1. Update the values of `version` and `description` to accordingly.
+	1. `"main": "./lib/YOUR_COMPONENT.js"` replace `YOUR_COMPONENT.js` with the name that you've set in `output.filename` during Step #2
+	1. If your component uses any other dependencies, make sure to add them into the `peerDependencies` list.
+1. Building your component by running `npm build` in your command line. This would generate the folder `/lib` which includes your component.
+1. Publishing to [npm](https://www.npmjs.com/)
+	1. Make sure you've [registered an npm account](https://www.npmjs.com/signup)
+	1. Run `npm login` in your command line, and enter your credentials.
+	1. Run `npm publish`, and your React component will be uploaded to npm! You can find it at https://www.npmjs.com/package/[YOUR PACKAGE NAME] or your npm profile.
 
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. To update your package, make sure you remember to increment the `version` in `package.json`, and then perform Step #5 again.
