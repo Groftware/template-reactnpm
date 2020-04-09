@@ -1,6 +1,6 @@
 {
     "name": "mycoolbutton",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Just a cool button",
     "main": "./lib/MyCoolButton.js",
     "license": "MIT",
@@ -8,7 +8,9 @@
         "build": "webpack"
     },
     "peerDependencies": {
-        "prop-types": "^15.6.0"
+        "prop-types": "^15.6.0",
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0"
     },
     "devDependencies": {
         "babel-core": "^6.21.0",
