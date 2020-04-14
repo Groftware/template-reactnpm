@@ -1,8 +1,8 @@
 {
-    "name": "mycoolbutton",
-    "version": "0.1.2",
-    "description": "Just a cool button",
-    "main": "./lib/MyCoolButton.js",
+    "name": "YOUR_PACKAGE_NAME",
+    "version": "0.1.0",
+    "description": "",
+    "main": "./lib/YOUR_COMPONENT.js",
     "license": "MIT",
     "scripts": {
         "build": "webpack"
